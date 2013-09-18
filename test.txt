@@ -1,0 +1,34 @@
+*F**.*
+
+Pending:
+  users/new.html.erb add some examples to (or delete) /home/action/game_contest_server/spec/views/users/new.html.erb_spec.rb
+    # No reason given
+    # ./spec/views/users/new.html.erb_spec.rb:4
+  UserHelper add some examples to (or delete) /home/action/game_contest_server/spec/helpers/user_helper_spec.rb
+    # No reason given
+    # ./spec/helpers/user_helper_spec.rb:14
+  User add some examples to (or delete) /home/action/game_contest_server/spec/models/user_spec.rb
+    # No reason given
+    # ./spec/models/user_spec.rb:4
+  UsersHelper add some examples to (or delete) /home/action/game_contest_server/spec/helpers/users_helper_spec.rb
+    # No reason given
+    # ./spec/helpers/users_helper_spec.rb:14
+
+Failures:
+
+  1) UsersPages Sign Up allows the user to fill in name and password
+     Failure/Error: visit signup_path
+     ActionView::Template::Error:
+       First argument in form cannot contain nil or be empty
+     # ./app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__3478703470385608567_33069880'
+     # ./spec/requests/users_pages_spec.rb:6:in `block (3 levels) in <top (required)>'
+
+Finished in 0.079 seconds
+6 examples, 1 failure, 4 pending
+
+Failed examples:
+
+rspec ./spec/requests/users_pages_spec.rb:5 # UsersPages Sign Up allows the user to fill in name and password
+
+Randomized with seed 58090
+
