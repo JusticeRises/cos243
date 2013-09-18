@@ -1,0 +1,49 @@
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]              # Path to the Ruby binary of your choice
+                                 # Default: /home/action/.rvm/rubies/ruby-2.0.0-p247/bin/ruby
+  -m, [--template=TEMPLATE]      # Path to some application template (can be a filesystem path or URL)
+      [--skip-gemfile]           # Don't create a Gemfile
+  -B, [--skip-bundle]            # Don't run bundle install
+  -G, [--skip-git]               # Skip .gitignore file
+      [--skip-keeps]             # Skip source control .keep files
+  -O, [--skip-active-record]     # Skip Active Record files
+  -S, [--skip-sprockets]         # Skip Sprockets files
+  -d, [--database=DATABASE]      # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                 # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]  # Preconfigure for selected JavaScript library
+                                 # Default: jquery
+  -J, [--skip-javascript]        # Skip JavaScript files
+      [--dev]                    # Setup the application with Gemfile pointing to your Rails checkout
+      [--edge]                   # Setup the application with Gemfile pointing to Rails repository
+  -T, [--skip-test-unit]         # Skip Test::Unit files
+      [--rc=RC]                  # Path to file containing extra configuration options for rails command
+      [--no-rc]                  # Skip loading of extra configuration options from .railsrc file
+
+Runtime options:
+  -f, [--force]    # Overwrite files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+  -q, [--quiet]    # Suppress status output
+  -s, [--skip]     # Skip files that already exist
+
+Rails options:
+  -h, [--help]     # Show this help message and quit
+  -v, [--version]  # Show Rails version number and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+    You can specify extra command-line arguments to be used every time
+    'rails new' runs in the .railsrc configuration file in your home directory.
+
+    Note that the arguments specified in the .railsrc file don't affect the
+    defaults values shown above in this help message.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
