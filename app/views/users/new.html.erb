@@ -1,13 +1,12 @@
-<h1>Yo Holmes</h1>
+<h1>Sign up!</h1>
 <!-- ruby.railstutorial.org/chapters/beginning#code-gemfile_pg_gem -->
 
-<hr>
 <% form_for @users do |f| %>
-  <%= f.label :username "Username"%>
+  <%= f.label :username, "Username"%>
   <%= f.text_field :username %>
-  <%= f.label :password "Password"%>
+  <%= f.label :password, "Password"%>
   <%= f.text_field :password %>
-  <%= f.label :password_confirmation "Password_Confirmation"%>
+  <%= f.label :password_confirmation, "Password_Confirmation"%>
   <%= f.text_field :password_confirmation %>
   <%= f.submit_tag "Create new account" 
 <% end %>
