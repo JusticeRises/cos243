@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(:username => params[:username],:password => params[:password])
-    render 'new'
+    #@user = User.new(:username => params[:username],:password => params[:password])
+    #render 'new'
     
     #Why does this not work?
     #@user = User.new(params[:user])
