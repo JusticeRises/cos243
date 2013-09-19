@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-GameContestServer::Application.config.secret_key_base = 'c63dfc552dc7f4c80602fa195b872a1ad84723535384e7c14974ecba7a30ed3ad4a927e8e6b06da299222e2d449d44a5ffed9ab86894ae4034427287900df16e'
+GameContestServer::Application.config.secret_key_base = '2f3afe9bc439d5025f722e4af7f918d28505c8e2176479c49b7216696bad0de0cc8a5db542779b7fe2ef59b1e274ffdf00fe0374cc55bff033ccf2e0a35484e7'
