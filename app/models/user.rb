@@ -9,16 +9,15 @@ class User < ActiveRecord::Base
   #validates :confirmation, presence: true
   #validates_format_of :email
   #  :with => /^(+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-  validates :username, presence: true  
+  validates :username, presence: true 
+  #validates :username, presence: true 
   
-  def create
-  end
+  validates :email, presence: true
+  validates_format_of :email, :with =>  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   
-  def email
-  end
   
-  def email=(new_email)
-  end
+
+ 
   
   #### Jeremiah 29:11 ####
   #For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.#
