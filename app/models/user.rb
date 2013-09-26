@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   #validates :password, presence: true
   #validates :confirmation, presence: true
 
+  validates :username, presence: true  
+  
   def create
   end
   
