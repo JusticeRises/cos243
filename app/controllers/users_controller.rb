@@ -4,6 +4,11 @@ class UsersController < ApplicationController
         @user = User.new
   end
   
+  def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+  end
+  
   def create
     #@user = User.new(:username => params[:username],:password => params[:password])
     #render 'new'
@@ -12,7 +17,7 @@ class UsersController < ApplicationController
     #@user = User.new(params[:user])
     #@user.save
     
-    permitted_params = params.require(:user).permit(:username, :password, :password_confirmation)
+    permitted_params = params.require(:user).permit(:username, :password, :password_confirmation,:email)
 		@user = User.new(permitted_params)
 		if @user.save then
 			redirect_to @user #type of response that the server can give to the browser.
