@@ -6,7 +6,7 @@
 #For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.#
 -->
 <%= form_for @user do |form| %>
-<% render 'user_fields', f: form%>
+<%= render 'user_fields', f: form %>
     <%= form.submit "Create new account" %>
 <% end %>
 
