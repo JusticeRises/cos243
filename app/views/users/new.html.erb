@@ -5,16 +5,8 @@
 #### Jeremiah 29:11 ####
 #For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.#
 -->
-
-
-<%= form_for @user do |f| %>
-    <%= f.label :username , "Enter a Username" %>
-    <%= f.text_field :username %>
-    <%= f.label :email, "Enter an Email Address" %>
-    <%= f.text_field :email %>
-    <%= f.label :password , "Enter a Password" %>
-    <%= f.text_field :password %>
-    <%= f.label :password_confirmation , "Enter Confirmation again" %>
-    <%= f.text_field :password_confirmation %>
-    <%= f.submit "Create new account" %>
+<%= form_for @user do |form| %>
+<% render 'user_fields', f: form%>
+    <%= form.submit "Create new account" %>
 <% end %>
+
