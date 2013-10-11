@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     
     @user = User.new(acceptable_params)
 		if @user.save then
+      flash[:success] = "Welcome to the site: #{@user.username}"
 			redirect_to @user #type of response that the server can give to the browser.
 		else
 			render 'new'
@@ -42,6 +43,7 @@ class UsersController < ApplicationController
     def update
     @user = User.find(params[:id])
     if @user.update(acceptable_params)
+      flash[:success] = "Your profile has been updated: #{@user.username}"
       redirect_to @user
     else
       render 'edit'

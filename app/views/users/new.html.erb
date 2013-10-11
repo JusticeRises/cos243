@@ -1,12 +1,26 @@
-<h1>Sign up!</h1>
+    <!-- JumboTron -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, Friend!</h1>
+        <p>Feel free to stay awhile and sign up!</p>
+       </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <%= form_for @user do |form| %>
+          <%= render 'user_fields', f: form %>
+          <%= form.submit "Create new account", class: 'btn btn-primary btn-lg' %>
+        <% end %>
+      </div>
+    </div>
+    <!-- End JumboTron -->
+
+
 <!-- ruby.railstutorial.org/chapters/beginning#code-gemfile_pg_gem -->
 
 <!--
 #### Jeremiah 29:11 ####
 #For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future.#
 -->
-<%= form_for @user do |form| %>
-<%= render 'user_fields', f: form %>
-    <%= form.submit "Create new account" %>
-<% end %>
 
