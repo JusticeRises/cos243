@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   
+  before_action :ensure_user_logged_in, only: [:edit, :update]
   def index
     @users =User.all
   end
@@ -61,8 +61,13 @@ class UsersController < ApplicationController
     
     def acceptable_params
       acceptable_params = params.require(:user).permit(:username, 
-                                                       :password, 
+                                                       :password,
                                                        :password_confirmation,
                                                        :email)
     end
+    
+    def ensure_user_logged_in
+      redirect_to login_path unless logged_in?
+    end
+    
 end
