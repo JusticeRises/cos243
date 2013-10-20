@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:index, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   before_action :ensure_user_logged_in, only: [:edit, :update]
+  before_action :ensure_current_user, only: [:edit, :update]
+  before_action :ensure_admin, only: [:destroy]
   def index
     @users =User.all
   end
@@ -36,11 +40,11 @@ class UsersController < ApplicationController
     
   def show
     @user = User.find(params[:id])
-    ##@microposts = @user.microposts.paginate(page: params[:page])
+ 
   end
     
     
-    def update
+  def update
     @user = User.find(params[:id])
     if @user.update(acceptable_params)
       flash[:success] = "Your profile has been updated: #{@user.username}"
@@ -50,12 +54,12 @@ class UsersController < ApplicationController
     end
   end
   
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
-  end  
     
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
+  end
     
   private
     
@@ -68,6 +72,27 @@ class UsersController < ApplicationController
     
     def ensure_user_logged_in
       redirect_to login_path unless logged_in?
+    end
+    
+    def ensure_current_user
+      @user = User.find(params[:id])
+      redirect_to users_path unless current_user?(@user) 
+    end
+    
+    def ensure_admin
+      redirect_to root_path unless cureent_user.admin?
+    end
+    
+    def signed_in_user
+      unless logged_in?
+        store_location
+        redirect_to login_path, notice: "Please sign in."
+      end
+    end
+    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
     
 end

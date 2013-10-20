@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928194111) do
+ActiveRecord::Schema.define(version: 20131016164444) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130928194111) do
     t.string   "confirmation"
     t.string   "password_digest"
     t.string   "email"
+    t.boolean  "admin",           default: false
   end
 
 end
