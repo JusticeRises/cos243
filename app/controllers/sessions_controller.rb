@@ -15,7 +15,8 @@ def create
   end
  
   def destroy
-    cookies.delete[:user_id]
+    cookies.delete(:user_id)
+    flash[:info] = "You have officially logged out"
     redirect_to root_path
   end
 end

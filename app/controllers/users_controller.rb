@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
   before_action :ensure_user_logged_in, only: [:edit, :update]
+  before_action :ensure_user_not_logged_in, only: [:create, :new]
   before_action :ensure_current_user, only: [:edit, :update]
   before_action :ensure_admin, only: [:destroy]
+  
+  
   def index
     @users =User.all
   end
   
   def edit
-    @user = User.find(params[:id])
+    if current_user == @user
+      @user = User.find(params[:id])
+    else
+      flash[:danger] = "You must sign in first."
+    end
   end
   
 
@@ -30,7 +35,9 @@ class UsersController < ApplicationController
     
     @user = User.new(acceptable_params)
 		if @user.save then
-      flash[:success] = "Welcome to the site: #{@user.username}"
+      sign_in @user
+      cookies.signed[:user_id] = @user.id
+      flash[:success] = "Welcome to the site: #{@user.username}! You have officially unofficially logged in!"
 			redirect_to @user #type of response that the server can give to the browser.
 		else
 			render 'new'
@@ -50,15 +57,25 @@ class UsersController < ApplicationController
       flash[:success] = "Your profile has been updated: #{@user.username}"
       redirect_to @user
     else
+      flash.now[:danger] = "Unable to update #{@user.username}"
       render 'edit'
     end
   end
   
     
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
-    redirect_to users_url
+    @user =  User.find(params[:id])
+    if( @user.admin)
+      flash[:danger] = "That's an admin, what you thinking foo?"
+      redirect_to "/"
+    elsif(current_user.admin)
+      @user.destroy
+      flash[:success] = "User deleted. Now sit in a corner and think about what you've done."
+      redirect_to "/users"
+    else
+      flash[:danger] = "Your not an admin... imposter!!"
+      redirect_to "/"
+    end
   end
     
   private
@@ -71,28 +88,31 @@ class UsersController < ApplicationController
     end
     
     def ensure_user_logged_in
-      redirect_to login_path unless logged_in?
+      if (!logged_in?)
+        flash[:warning] = "There is an error in our midst"
+        redirect_to login_path
+      end
+    end
+    
+    def ensure_user_not_logged_in
+      if (logged_in?)
+        flash[:warning] = "There is an error in our midst bro"
+        redirect_to "/"
+      end
     end
     
     def ensure_current_user
       @user = User.find(params[:id])
-      redirect_to users_path unless current_user?(@user) 
+      (redirect_to "/" and flash[:danger] = "Error yo") unless current_user?(@user)
     end
     
     def ensure_admin
-      redirect_to root_path unless cureent_user.admin?
+      redirect_to root_path unless current_user.admin?
     end
     
-    def signed_in_user
-      unless logged_in?
-        store_location
-        redirect_to login_path, notice: "Please sign in."
-      end
-    end
+    def admin_user
+        redirect_to(root_path) unless current_user.admin?
+    end  
     
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
     
 end

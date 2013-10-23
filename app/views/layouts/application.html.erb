@@ -15,10 +15,10 @@
         <nav class="navbar navbar-default" role="navigation">
           <ul class="nav nav-justified">
             <li class="active"><a href="/signup">Homepage</a></li>
-            <li><%= link_to "Game Contest Server",    root_path %></li>
+            <li><%= link_to "Game Contest Server", root_path %></li>
+            <li><%= link_to "Users", users_path %></li>
             
             <% if logged_in? %>
-              <li><%= link_to "Users", users_path %></li>
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   Account <b class="caret"></b>
@@ -32,10 +32,10 @@
                   </li>
                 </ul>
               </li>
-          <% else %>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login" class="btn btn-primary btn-large"><i class="icon-white icon-ok"></i>Log In</a></li>
-          <% end %>
+            <% else %>
+              <li><a href="/signup">Sign Up</a></li>
+              <li><a href="/login" class="btn btn-primary btn-large"><i class="icon-white icon-ok"></i>Log In</a></li>
+            <% end %>
             
             <!--
             <li><a href="#">Projects</a></li>
@@ -51,9 +51,9 @@
   
   
   
-    <% flash.each do |level, message| %>
-		    <div class ="alert alert-<%= level %>"><%= message %></div>
-    <% end %>
+  <% flash.each do |level, message| %>
+    <div class ="alert alert-<%= level %>"><%= message %></div>
+  <% end %>
   
   <div class = container >
     <%= yield %>

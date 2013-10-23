@@ -1,6 +1,10 @@
 module SessionsHelper
-  def current_user
+   def current_user
     @current_user ||= User.find(cookies.signed[:user_id]) if cookies.signed[:user_id]
+  end
+  
+  def logged_in?
+    !current_user.nil?
   end
   
   def current_user?(user)
@@ -9,10 +13,6 @@ module SessionsHelper
   
   def current_user=(user)
     @current_user = user
-  end
-  
-  def logged_in?
-    !current_user.nil?
   end
   
   def redirect_back_or(default)
@@ -27,5 +27,12 @@ module SessionsHelper
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)
+  end
+  
+   def sign_in(user)
+    remember_token = User.new_remember_token
+    cookies.permanent[:remember_token] = remember_token
+    user.update_attribute(:remember_token, User.encrypt(remember_token))
+    self.current_user = user
   end
 end
