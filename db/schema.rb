@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022220040) do
+ActiveRecord::Schema.define(version: 20131105214957) do
+
+  create_table "contests", force: true do |t|
+    t.datetime "deadline"
+    t.datetime "start"
+    t.text     "description"
+    t.string   "name"
+    t.string   "contest_type"
+    t.integer  "referee_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contests", ["referee_id"], name: "index_contests_on_referee_id"
+  add_index "contests", ["user_id"], name: "index_contests_on_user_id"
+
+  create_table "matches", force: true do |t|
+    t.string   "status"
+    t.date     "completion"
+    t.datetime "earliest_start"
+    t.integer  "manager_id"
+    t.string   "manager_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "matches", ["manager_id", "manager_type"], name: "index_matches_on_manager_id_and_manager_type"
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -22,16 +49,56 @@ ActiveRecord::Schema.define(version: 20131022220040) do
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
-  create_table "users", force: true do |t|
+  create_table "player_matches", force: true do |t|
+    t.integer "player_id"
+    t.integer "match_id"
+    t.float   "score"
+    t.string  "result"
+  end
+
+  add_index "player_matches", ["match_id"], name: "index_player_matches_on_match_id"
+  add_index "player_matches", ["player_id"], name: "index_player_matches_on_player_id"
+
+  create_table "players", force: true do |t|
+    t.string   "file_location"
+    t.text     "description"
+    t.string   "name"
+    t.boolean  "downloadable",  default: false
+    t.boolean  "playable",      default: true
+    t.integer  "contest_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  add_index "players", ["contest_id"], name: "index_players_on_contest_id"
+  add_index "players", ["user_id"], name: "index_players_on_user_id"
+
+  create_table "referees", force: true do |t|
+    t.string   "file_location"
+    t.string   "name"
+    t.string   "rules_url"
+    t.integer  "players_per_game"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "referees", ["user_id"], name: "index_referees_on_user_id"
+
+  create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password"
-    t.string   "confirmation"
+    t.string   "confirm_password"
+    t.string   "chat_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "banned",           default: false
+    t.boolean  "contest_creator",  default: false
     t.string   "password_digest"
     t.string   "email"
     t.string   "remember_token"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",            default: false
   end
 
 end

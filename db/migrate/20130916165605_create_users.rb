@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :password
       t.string :confirm_password
+      t.string :chat_url
 
       t.timestamps
     end
