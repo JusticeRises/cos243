@@ -10,11 +10,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    if current_user == @user
-      @user = User.find(params[:id])
-    else
-      flash[:danger] = "You must sign in first."
-    end
+    
   end
   
 
@@ -85,13 +81,6 @@ class UsersController < ApplicationController
                                                        :password,
                                                        :password_confirmation,
                                                        :email)
-    end
-    
-    def ensure_user_logged_in
-      if (!logged_in?)
-        flash[:warning] = "There is an error in our midst"
-        redirect_to login_path
-      end
     end
     
     def ensure_user_not_logged_in

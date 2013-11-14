@@ -7,6 +7,13 @@ module SessionsHelper
     !current_user.nil?
   end
   
+  def ensure_user_logged_in
+      if (!logged_in?)
+        flash[:warning] = "There is an error in our midst"
+        redirect_to login_path
+      end
+  end
+  
   def current_user?(user)
     current_user == user
   end

@@ -4,6 +4,14 @@ class Referee < ActiveRecord::Base
   has_many :contests
   has_many :matches, as: :manager
   
+  validates :players_per_game, presence: true, :inclusion => 1..10
+  
+  validates :name, presence: true, length: {minimum: 1}
+  validates :rules_url, presence: true, length: {minimum: 1}
+  validates :file_location, presence: true, length: {minimum: 1}
+  
+  validates_format_of :rules_url, :with => URI::regexp
+  
   def upload=(uploaded_io)
     if uploaded_io.nil?
       # problem -- deal with later

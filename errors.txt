@@ -1,0 +1,614 @@
+..........................................................................FFFFFFFFFF....FFFFFFFFFFFFFFFFFF.FFF............................FFF...F.FFFFFF............FFFF......F.FF.FF**.....................FFFFFF.FFFFFF******FF***..**.*...**.*...*...*..*..**..*FFFFFFFFF
+
+Pending:
+  AuthorizationPages authenticated admin user edit action (other)
+    # No reason given
+    # ./spec/features/authentication_pages_spec.rb:166
+  AuthorizationPages authenticated admin user update action (other)
+    # No reason given
+    # ./spec/features/authentication_pages_spec.rb:169
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats poorly formed urls is invalid
+    # No reason given
+    # ./spec/models/referee_spec.rb:76
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+  Referee various url formats properly formed urls is valid
+    # No reason given
+    # ./spec/models/referee_spec.rb:123
+
+Failures:
+
+  1) RefereePages create invalid information missing information should not create a referee
+     Failure/Error: expect { click_button submit }.not_to change(Referee, :count)
+     Capybara::ElementNotFound:
+       Unable to find button "Create Referee"
+     # ./spec/features/referees_spec.rb:24:in `block (6 levels) in <top (required)>'
+     # ./spec/features/referees_spec.rb:24:in `block (5 levels) in <top (required)>'
+
+  2) RefereePages create invalid information missing information after submission 
+     Failure/Error: before { click_button submit }
+     Capybara::ElementNotFound:
+       Unable to find button "Create Referee"
+     # ./spec/features/referees_spec.rb:28:in `block (6 levels) in <top (required)>'
+
+  3) RefereePages create valid information should create a referee
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  4) RefereePages create valid information should add the code to the right directory
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  5) RefereePages create valid information redirects properly 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  6) RefereePages create valid information after submission 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  7) RefereePages create valid information after submission 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  8) RefereePages create valid information after submission 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  9) RefereePages create valid information after submission 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  10) RefereePages create valid information after submission 
+     Failure/Error: attach_file('Upload file', file_location)
+     Capybara::ElementNotFound:
+       Unable to find file field "Upload file"
+     # ./spec/features/referees_spec.rb:40:in `block (4 levels) in <top (required)>'
+
+  11) RefereePages show lists all the contests that use this referee
+     Failure/Error: should have_selector('li', text: contest.name)
+     Capybara::ExpectationNotMet:
+       expected to find css "li" with text "Contest 54" but there were no matches. Also found "Homepage", "Game Contest Server", "Users", "Sign Up", "Log In", which matched the selector but not all filters.
+     # ./spec/features/referees_spec.rb:217:in `block (4 levels) in <top (required)>'
+     # ./spec/features/referees_spec.rb:216:in `block (3 levels) in <top (required)>'
+
+  12) RefereePages show should text "User 159"
+     Failure/Error: it { should have_content(referee.user.username) }
+       expected to find text "User 159" in "Game Contest Server Homepage Game Contest Server Users Sign Up Log In Dat Referee In Foes Referee 39 Rules Players per game: 4"
+     # ./spec/features/referees_spec.rb:214:in `block (3 levels) in <top (required)>'
+
+  13) RefereePages edit 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  14) RefereePages edit 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  15) RefereePages edit 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  16) RefereePages edit should modify an existing referee
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  17) RefereePages edit with valid information produces an update message
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  18) RefereePages edit with valid information does not add a new user to the system
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  19) RefereePages edit with valid information changes the data 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  20) RefereePages edit with valid information changes the data 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  21) RefereePages edit with valid information changes the data 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  22) RefereePages edit with valid information redirects properly 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  23) RefereePages edit with forbidden attributes 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  24) RefereePages edit with invalid information does not add a new referee to the system
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  25) RefereePages edit with invalid information produces an error message
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  26) RefereePages edit with invalid information does not change data 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  27) RefereePages edit with invalid information does not change data 
+     Failure/Error: visit edit_referee_path(referee)
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/features/referees_spec.rb:85:in `block (3 levels) in <top (required)>'
+
+  28) RefereePages destroy removes a referee from the system
+     Failure/Error: expect { delete referee_path(referee) }.to change(Referee, :count).by(-1)
+       count should have been changed by -1, but was changed by 0
+     # ./spec/features/referees_spec.rb:197:in `block (3 levels) in <top (required)>'
+
+  29) RefereePages destroy should remove the referee from the file system
+     Failure/Error: expect do
+       result should have been changed by -1, but was changed by 0
+     # ./spec/features/referees_spec.rb:179:in `block (3 levels) in <top (required)>'
+
+  30) RefereePages destroy redirects properly should redirect to "/referees"
+     Failure/Error: specify { expect(response).to redirect_to(referees_path) }
+       Expected response to be a redirect to <http://www.example.com/referees> but was a redirect to <http://www.example.com/>.
+       Expected "http://www.example.com/referees" to be === "http://www.example.com/".
+     # ./spec/features/referees_spec.rb:187:in `block (4 levels) in <top (required)>'
+
+  31) RefereePages show all lists all the referees in the system
+     Failure/Error: visit referees_path
+     ActionView::MissingTemplate:
+       Missing template referees/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+         * "/home/action/game_contest_server/app/views"
+     # ./spec/features/referees_spec.rb:227:in `block (3 levels) in <top (required)>'
+
+  32) UsersPages Display Users individually should text "5 players"
+     Failure/Error: it { should have_content('5 players') }
+       expected to find text "5 players" in "Game Contest Server Homepage Game Contest Server Users Sign Up Log In User Information User 224: john.doe@example.com"
+     # ./spec/features/users_pages_spec.rb:87:in `block (4 levels) in <top (required)>'
+
+  33) UsersPages Display Users individually 
+     Failure/Error: it { should have_link('New Player', href: new_player_path) }
+     NameError:
+       undefined local variable or method `new_player_path' for #<RSpec::Core::ExampleGroup::Nested_7::Nested_2::Nested_1:0x000000065d1280>
+     # ./spec/features/users_pages_spec.rb:86:in `block (4 levels) in <top (required)>'
+
+  34) UsersPages Display Users individually lists all the players for the user
+     Failure/Error: should have_selector('li', text: player.name)
+     Capybara::ExpectationNotMet:
+       expected to find css "li" with text "Player 28" but there were no matches. Also found "Homepage", "Game Contest Server", "Users", "Sign Up", "Log In", which matched the selector but not all filters.
+     # ./spec/features/users_pages_spec.rb:82:in `block (5 levels) in <top (required)>'
+     # ./spec/features/users_pages_spec.rb:81:in `block (4 levels) in <top (required)>'
+
+  35) UsersPages Display Users individually should have css "h2" with text "Players"
+     Failure/Error: it { should have_selector('h2', text: 'Players') }
+     Capybara::ExpectationNotMet:
+       expected to find css "h2" with text "Players" but there were no matches
+     # ./spec/features/users_pages_spec.rb:79:in `block (4 levels) in <top (required)>'
+
+  36) UsersPages Display Users individually logged in gives delete links to all the players for the user
+     Failure/Error: should have_link('delete', href: player_path(player))
+     NoMethodError:
+       undefined method `player_path' for #<RSpec::Core::ExampleGroup::Nested_7::Nested_2::Nested_1::Nested_1:0x00000006ad9ae8>
+     # ./spec/features/users_pages_spec.rb:100:in `block (6 levels) in <top (required)>'
+     # ./spec/features/users_pages_spec.rb:99:in `block (5 levels) in <top (required)>'
+
+  37) UsersPages Display Users individually (contest creator) should have link "New Referee"
+     Failure/Error: it { should have_link('New Referee', href: new_referee_path) }
+     Capybara::ExpectationNotMet:
+       expected to find link "New Referee" but there were no matches
+     # ./spec/features/users_pages_spec.rb:122:in `block (4 levels) in <top (required)>'
+
+  38) UsersPages Display Users individually (contest creator) should have css "h2" with text "Referees"
+     Failure/Error: it { should have_selector('h2', text: 'Referees') }
+     Capybara::ExpectationNotMet:
+       expected to find css "h2" with text "Referees" but there were no matches
+     # ./spec/features/users_pages_spec.rb:115:in `block (4 levels) in <top (required)>'
+
+  39) UsersPages Display Users individually (contest creator) lists all the referees for the user
+     Failure/Error: should have_selector('li', text: ref.name)
+     Capybara::ExpectationNotMet:
+       expected to find css "li" with text "Referee 129" but there were no matches. Also found "Homepage", "Game Contest Server", "Users", "Sign Up", "Log In", which matched the selector but not all filters.
+     # ./spec/features/users_pages_spec.rb:118:in `block (5 levels) in <top (required)>'
+     # ./spec/features/users_pages_spec.rb:117:in `block (4 levels) in <top (required)>'
+
+  40) UsersPages Display Users individually (contest creator) should text "5 referees"
+     Failure/Error: it { should have_content('5 referees') }
+       expected to find text "5 referees" in "Game Contest Server Homepage Game Contest Server Users Sign Up Log In User Information User 326: john.doe@example.com"
+     # ./spec/features/users_pages_spec.rb:123:in `block (4 levels) in <top (required)>'
+
+  41) UsersPages Display Users individually (contest creator) logged in gives delete links to all the referees for the user
+     Failure/Error: should have_link('delete', href: referee_path(ref))
+     Capybara::ExpectationNotMet:
+       expected to find link "delete" but there were no matches
+     # ./spec/features/users_pages_spec.rb:133:in `block (6 levels) in <top (required)>'
+     # ./spec/features/users_pages_spec.rb:132:in `block (5 levels) in <top (required)>'
+
+  42) AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit browser path 
+     Failure/Error: before { visit path }
+     NoMethodError:
+       undefined method `referees' for nil:NilClass
+     Shared Example Group: "redirects to a login" called from ./spec/features/authentication_pages_spec.rb:71
+     # ./app/controllers/referees_controller.rb:6:in `new'
+     # ./spec/support/login.rb:14:in `block (3 levels) in <top (required)>'
+
+  43) AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit browser path 
+     Failure/Error: before { visit path }
+     NoMethodError:
+       undefined method `referees' for nil:NilClass
+     Shared Example Group: "redirects to a login" called from ./spec/features/authentication_pages_spec.rb:71
+     # ./app/controllers/referees_controller.rb:6:in `new'
+     # ./spec/support/login.rb:14:in `block (3 levels) in <top (required)>'
+
+  44) AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit HTTP path 
+     Failure/Error: before { send(method, http_path) }
+     NoMethodError:
+       undefined method `referees' for nil:NilClass
+     Shared Example Group: "redirects to a login" called from ./spec/features/authentication_pages_spec.rb:71
+     # ./app/controllers/referees_controller.rb:10:in `create'
+     # ./spec/support/login.rb:21:in `block (3 levels) in <top (required)>'
+
+  45) AuthorizationPages authenticated, but non-admin user for Users controller behaves like redirects to root visit HTTP path should have css "div.alert.alert-danger"
+     Failure/Error: it { errors_on_redirect(root_path, error_type) }
+     Capybara::ExpectationNotMet:
+       expected to find css "div.alert.alert-danger" but there were no matches
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:144
+     # ./spec/support/redirect.rb:4:in `errors_on_redirect'
+     # ./spec/support/login.rb:44:in `block (3 levels) in <top (required)>'
+
+  46) AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path should have css "div.alert.alert-danger"
+     Failure/Error: it { errors_on_redirect(root_path, error_type) }
+     Capybara::ExpectationNotMet:
+       expected to find css "div.alert.alert-danger" but there were no matches
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:132
+     # ./spec/support/redirect.rb:4:in `errors_on_redirect'
+     # ./spec/support/login.rb:44:in `block (3 levels) in <top (required)>'
+
+  47) AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit browser path should redirect to "/"
+     Failure/Error: it { errors_on_redirect(root_path, error_type) }
+       Expected response to be a <redirect>, but was <200>
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:122
+     # ./spec/support/redirect.rb:2:in `errors_on_redirect'
+     # ./spec/support/login.rb:37:in `block (3 levels) in <top (required)>'
+
+  48) AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path 
+     Failure/Error: before { send(method, http_path) }
+     ActiveRecord::RecordNotFound:
+       Couldn't find User with id=1
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:122
+     # ./app/controllers/referees_controller.rb:53:in `ensure_current_user'
+     # ./spec/support/login.rb:42:in `block (3 levels) in <top (required)>'
+
+  49) AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit browser path should redirect to "/"
+     Failure/Error: it { errors_on_redirect(root_path, error_type) }
+       Expected response to be a <redirect>, but was <200>
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:113
+     # ./spec/support/redirect.rb:2:in `errors_on_redirect'
+     # ./spec/support/login.rb:37:in `block (3 levels) in <top (required)>'
+
+  50) AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path 
+     Failure/Error: before { send(method, http_path) }
+     ActionController::ParameterMissing:
+       param not found: referee
+     Shared Example Group: "redirects to root" called from ./spec/features/authentication_pages_spec.rb:113
+     # ./app/controllers/referees_controller.rb:49:in `acceptable_params'
+     # ./app/controllers/referees_controller.rb:10:in `create'
+     # ./spec/support/login.rb:42:in `block (3 levels) in <top (required)>'
+
+  51) Referee blank file location should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: " ", name: "Referee 168", rules_url: "http://example.com/path/to/rules", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:26:in `block (3 levels) in <top (required)>'
+
+  52) Referee wordy players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 169", rules_url: "http://example.com/path/to/rules", players_per_game: 0, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:143:in `block (3 levels) in <top (required)>'
+
+  53) Referee blank players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 170", rules_url: "http://example.com/path/to/rules", players_per_game: nil, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:138:in `block (3 levels) in <top (required)>'
+
+  54) Referee empty players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 171", rules_url: "http://example.com/path/to/rules", players_per_game: nil, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:133:in `block (3 levels) in <top (required)>'
+
+  55) Referee empty file location should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "", name: "Referee 172", rules_url: "http://example.com/path/to/rules", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:21:in `block (3 levels) in <top (required)>'
+
+  56) Referee empty rules_url should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 173", rules_url: "", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:41:in `block (3 levels) in <top (required)>'
+
+  57) Referee blank rules_url should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 175", rules_url: " ", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:46:in `block (3 levels) in <top (required)>'
+
+  58) Referee empty name should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "", rules_url: "http://example.com/path/to/rules", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:31:in `block (3 levels) in <top (required)>'
+
+  59) Referee zero players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 177", rules_url: "http://example.com/path/to/rules", players_per_game: 0, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:148:in `block (3 levels) in <top (required)>'
+
+  60) Referee blank name should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: " ", rules_url: "http://example.com/path/to/rules", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:36:in `block (3 levels) in <top (required)>'
+
+  61) Referee negative players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 179", rules_url: "http://example.com/path/to/rules", players_per_game: -1, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:153:in `block (3 levels) in <top (required)>'
+
+  62) Referee too large players per game should not be valid
+     Failure/Error: it { should_not be_valid }
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 180", rules_url: "http://example.com/path/to/rules", players_per_game: 11, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:163:in `block (3 levels) in <top (required)>'
+
+  63) Referee various url formats poorly formed urls is invalid
+     Failure/Error: expect(referee).not_to be_valid
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 181", rules_url: "www.dr.google..com", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:71:in `block (5 levels) in <top (required)>'
+
+  64) Referee various url formats poorly formed urls is invalid
+     Failure/Error: expect(referee).not_to be_valid
+       expected #<Referee id: 1, file_location: "/home/action/game_contest_server/code/referees/test...", name: "Referee 182", rules_url: "www..dr.google", players_per_game: 4, user_id: 626, created_at: "2013-11-13 00:28:12", updated_at: "2013-11-13 00:28:12"> not to be valid
+     # ./spec/models/referee_spec.rb:71:in `block (5 levels) in <top (required)>'
+
+  65) ContestsPages create invalid information missing information should not create a contest
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_1::Nested_1:0x000000072f2360>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  66) ContestsPages create invalid information missing information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_1::Nested_1::Nested_1:0x00000007534470>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  67) ContestsPages create valid information should create a contest
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2:0x00000005fe4340>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  68) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x00000006831a48>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  69) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x00000006985610>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  70) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x000000067d4028>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  71) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x00000006ed28c0>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  72) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x00000007138420>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  73) ContestsPages create valid information after submission 
+     Failure/Error: visit new_contest_path
+     NameError:
+       undefined local variable or method `new_contest_path' for #<RSpec::Core::ExampleGroup::Nested_5::Nested_1::Nested_2::Nested_1:0x00000005fe4f20>
+     # ./spec/features/contests_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+Finished in 13.2 seconds
+268 examples, 73 failures, 23 pending
+
+Failed examples:
+
+rspec ./spec/features/referees_spec.rb:23 # RefereePages create invalid information missing information should not create a referee
+rspec ./spec/features/referees_spec.rb:30 # RefereePages create invalid information missing information after submission 
+rspec ./spec/features/referees_spec.rb:43 # RefereePages create valid information should create a referee
+rspec ./spec/features/referees_spec.rb:47 # RefereePages create valid information should add the code to the right directory
+rspec ./spec/features/referees_spec.rb:62 # RefereePages create valid information redirects properly 
+rspec ./spec/features/referees_spec.rb:68 # RefereePages create valid information after submission 
+rspec ./spec/features/referees_spec.rb:72 # RefereePages create valid information after submission 
+rspec ./spec/features/referees_spec.rb:70 # RefereePages create valid information after submission 
+rspec ./spec/features/referees_spec.rb:71 # RefereePages create valid information after submission 
+rspec ./spec/features/referees_spec.rb:73 # RefereePages create valid information after submission 
+rspec ./spec/features/referees_spec.rb:215 # RefereePages show lists all the contests that use this referee
+rspec ./spec/features/referees_spec.rb:214 # RefereePages show should text "User 159"
+rspec ./spec/features/referees_spec.rb:90 # RefereePages edit 
+rspec ./spec/features/referees_spec.rb:88 # RefereePages edit 
+rspec ./spec/features/referees_spec.rb:89 # RefereePages edit 
+rspec ./spec/features/referees_spec.rb:164 # RefereePages edit should modify an existing referee
+rspec ./spec/features/referees_spec.rb:154 # RefereePages edit with valid information produces an update message
+rspec ./spec/features/referees_spec.rb:159 # RefereePages edit with valid information does not add a new user to the system
+rspec ./spec/features/referees_spec.rb:139 # RefereePages edit with valid information changes the data 
+rspec ./spec/features/referees_spec.rb:138 # RefereePages edit with valid information changes the data 
+rspec ./spec/features/referees_spec.rb:137 # RefereePages edit with valid information changes the data 
+rspec ./spec/features/referees_spec.rb:151 # RefereePages edit with valid information redirects properly 
+rspec ./spec/features/referees_spec.rb:123 # RefereePages edit with forbidden attributes 
+rspec ./spec/features/referees_spec.rb:107 # RefereePages edit with invalid information does not add a new referee to the system
+rspec ./spec/features/referees_spec.rb:111 # RefereePages edit with invalid information produces an error message
+rspec ./spec/features/referees_spec.rb:103 # RefereePages edit with invalid information does not change data 
+rspec ./spec/features/referees_spec.rb:104 # RefereePages edit with invalid information does not change data 
+rspec ./spec/features/referees_spec.rb:196 # RefereePages destroy removes a referee from the system
+rspec ./spec/features/referees_spec.rb:178 # RefereePages destroy should remove the referee from the file system
+rspec ./spec/features/referees_spec.rb:187 # RefereePages destroy redirects properly should redirect to "/referees"
+rspec ./spec/features/referees_spec.rb:230 # RefereePages show all lists all the referees in the system
+rspec ./spec/features/users_pages_spec.rb:87 # UsersPages Display Users individually should text "5 players"
+rspec ./spec/features/users_pages_spec.rb:86 # UsersPages Display Users individually 
+rspec ./spec/features/users_pages_spec.rb:80 # UsersPages Display Users individually lists all the players for the user
+rspec ./spec/features/users_pages_spec.rb:79 # UsersPages Display Users individually should have css "h2" with text "Players"
+rspec ./spec/features/users_pages_spec.rb:98 # UsersPages Display Users individually logged in gives delete links to all the players for the user
+rspec ./spec/features/users_pages_spec.rb:122 # UsersPages Display Users individually (contest creator) should have link "New Referee"
+rspec ./spec/features/users_pages_spec.rb:115 # UsersPages Display Users individually (contest creator) should have css "h2" with text "Referees"
+rspec ./spec/features/users_pages_spec.rb:116 # UsersPages Display Users individually (contest creator) lists all the referees for the user
+rspec ./spec/features/users_pages_spec.rb:123 # UsersPages Display Users individually (contest creator) should text "5 referees"
+rspec ./spec/features/users_pages_spec.rb:131 # UsersPages Display Users individually (contest creator) logged in gives delete links to all the referees for the user
+rspec ./spec/support/login.rb:16 # AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit browser path 
+rspec ./spec/support/login.rb:17 # AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit browser path 
+rspec ./spec/support/login.rb:23 # AuthorizationPages non-authenticated users for Referees controller new action behaves like redirects to a login visit HTTP path 
+rspec ./spec/support/login.rb:44 # AuthorizationPages authenticated, but non-admin user for Users controller behaves like redirects to root visit HTTP path should have css "div.alert.alert-danger"
+rspec ./spec/support/login.rb:44 # AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path should have css "div.alert.alert-danger"
+rspec ./spec/support/login.rb:37 # AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit browser path should redirect to "/"
+rspec ./spec/support/login.rb:44 # AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path 
+rspec ./spec/support/login.rb:37 # AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit browser path should redirect to "/"
+rspec ./spec/support/login.rb:44 # AuthorizationPages authenticated, but wrong user for Referees controller behaves like redirects to root visit HTTP path 
+rspec ./spec/models/referee_spec.rb:26 # Referee blank file location should not be valid
+rspec ./spec/models/referee_spec.rb:143 # Referee wordy players per game should not be valid
+rspec ./spec/models/referee_spec.rb:138 # Referee blank players per game should not be valid
+rspec ./spec/models/referee_spec.rb:133 # Referee empty players per game should not be valid
+rspec ./spec/models/referee_spec.rb:21 # Referee empty file location should not be valid
+rspec ./spec/models/referee_spec.rb:41 # Referee empty rules_url should not be valid
+rspec ./spec/models/referee_spec.rb:46 # Referee blank rules_url should not be valid
+rspec ./spec/models/referee_spec.rb:31 # Referee empty name should not be valid
+rspec ./spec/models/referee_spec.rb:148 # Referee zero players per game should not be valid
+rspec ./spec/models/referee_spec.rb:36 # Referee blank name should not be valid
+rspec ./spec/models/referee_spec.rb:153 # Referee negative players per game should not be valid
+rspec ./spec/models/referee_spec.rb:163 # Referee too large players per game should not be valid
+rspec ./spec/models/referee_spec.rb:69 # Referee various url formats poorly formed urls is invalid
+rspec ./spec/models/referee_spec.rb:69 # Referee various url formats poorly formed urls is invalid
+rspec ./spec/features/contests_spec.rb:23 # ContestsPages create invalid information missing information should not create a contest
+rspec ./spec/features/contests_spec.rb:30 # ContestsPages create invalid information missing information after submission 
+rspec ./spec/features/contests_spec.rb:45 # ContestsPages create valid information should create a contest
+rspec ./spec/features/contests_spec.rb:52 # ContestsPages create valid information after submission 
+rspec ./spec/features/contests_spec.rb:56 # ContestsPages create valid information after submission 
+rspec ./spec/features/contests_spec.rb:54 # ContestsPages create valid information after submission 
+rspec ./spec/features/contests_spec.rb:55 # ContestsPages create valid information after submission 
+rspec ./spec/features/contests_spec.rb:58 # ContestsPages create valid information after submission 
+rspec ./spec/features/contests_spec.rb:57 # ContestsPages create valid information after submission 
+
+Randomized with seed 44882
+
