@@ -1,29 +1,38 @@
 class Referee < ActiveRecord::Base
+  ##https://github.com/adzap/validates_timeliness
+  
   belongs_to :user
   
   has_many :contests
   has_many :matches, as: :manager
   
   validates :players_per_game, presence: true, :inclusion => 1..10
+  validates_numericality_of :players_per_game, :only_integer => true
   
   validates :name, presence: true, length: {minimum: 1}
+  validates_uniqueness_of :name
+  
   validates :rules_url, presence: true, length: {minimum: 1}
   validates :file_location, presence: true, length: {minimum: 1}
+  validate :file_exists?
   
   validates_format_of :rules_url, :with => URI::regexp
   
-  def upload=(uploaded_io)
-    if uploaded_io.nil?
-      # problem -- deal with later
-    else
-      time_no_spaces = Time.now.to_s.gsub(/\s/, '_')
-      file_location = Rails.root.join('code',
-                                      'referees',
-                                       Rails.env,
-                                       #Time.now.to_s + current_user.id.to_s).to_s
-                                       time_no_spaces).to_s
-      IO::copy_stream(uploaded_io, file_location)
-      self.file_location = file_location
+  before_destroy :destroyAction
+  
+  def destroyAction
+    File.delete(self.file_location)
+  end
+  
+  def file_exists?
+    if self.file_location.nil? or !File.exist?(self.file_location)
+      errors.add(:file_location, "File location must contain a file.")
     end
-  end  
+  end
+  
+  def referee 
+    self 
+  end
+  
+  include Uploadable
 end

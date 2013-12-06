@@ -3,6 +3,10 @@ module SessionsHelper
     @current_user ||= User.find(cookies.signed[:user_id]) if cookies.signed[:user_id]
   end
   
+  def contest_creator?
+    current_user.contest_creator
+  end
+  
   def logged_in?
     !current_user.nil?
   end
@@ -12,6 +16,11 @@ module SessionsHelper
         flash[:warning] = "There is an error in our midst"
         redirect_to login_path
       end
+  end
+   
+  def ensure_current_user
+      @user = User.find(params[:id])
+      (redirect_to "/" and flash[:danger] = "Error yo") unless current_user?(@user)
   end
   
   def current_user?(user)
@@ -42,4 +51,15 @@ module SessionsHelper
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
   end
+  
+  
+  ##Alex voodoo
+  def owner?(thingamawatchit)
+    current_user.id == thingamawatchit.user_id
+  end
+  
+  def ensure_contest_creator
+      (flash[:danger] = "You aren't allowed to create contests" and redirect_to root_path) unless current_user and current_user.contest_creator?
+  end
+  
 end

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :referees
   has_many :contests
+  has_many :players
   before_create :create_remember_token
   #attr_accessor :username, :password, :confirmation
   ##before_save { self.password = self.password_confirmation }

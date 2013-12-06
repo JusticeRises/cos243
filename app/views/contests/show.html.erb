@@ -1,3 +1,9 @@
 <h1> Contest Information </h1>
 
-<p><%= @contest.name %></p>
+<p><%= link_to "New Player for this contest", new_contest_player_path(@contest) %></p>
+
+<%= render @contest %>
+
+<p> 1 day </p>
+<p> 2 days </p>
+<p> /less than a minute|1 minute/ </p>

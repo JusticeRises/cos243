@@ -4,19 +4,22 @@ class UsersController < ApplicationController
   before_action :ensure_current_user, only: [:edit, :update]
   before_action :ensure_admin, only: [:destroy]
   
+  respond_to :html, :json, :xml
   
   def index
     @users =User.all
+    respond_with(@users)
   end
   
   def edit
-    
+    respond_with(@user)
   end
   
 
   
 	def new
     @user = User.new
+    respond_with(@user)
   end
   
   
@@ -34,16 +37,14 @@ class UsersController < ApplicationController
       sign_in @user
       cookies.signed[:user_id] = @user.id
       flash[:success] = "Welcome to the site: #{@user.username}! You have officially unofficially logged in!"
-			redirect_to @user #type of response that the server can give to the browser.
-		else
-			render 'new'
 		end
+    respond_with(@user)
       
   end
     
   def show
     @user = User.find(params[:id])
- 
+   respond_with(@user)
   end
     
     
@@ -51,11 +52,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(acceptable_params)
       flash[:success] = "Your profile has been updated: #{@user.username}"
-      redirect_to @user
     else
       flash.now[:danger] = "Unable to update #{@user.username}"
-      render 'edit'
     end
+    respond_with(@user)
   end
   
     
@@ -63,15 +63,13 @@ class UsersController < ApplicationController
     @user =  User.find(params[:id])
     if( @user.admin)
       flash[:danger] = "That's an admin, what you thinking foo?"
-      redirect_to "/"
     elsif(current_user.admin)
       @user.destroy
       flash[:success] = "User deleted. Now sit in a corner and think about what you've done."
-      redirect_to "/users"
     else
       flash[:danger] = "Your not an admin... imposter!!"
-      redirect_to "/"
     end
+    respond_with(@user)
   end
     
   private
@@ -96,7 +94,7 @@ class UsersController < ApplicationController
     end
     
     def ensure_admin
-      redirect_to root_path unless current_user.admin?
+      (redirect_to root_path and flash[:danger] = "You are not an admin") unless current_user.admin?
     end
     
     def admin_user

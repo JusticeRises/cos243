@@ -1,23 +1,26 @@
-<h1> 'Creating a new ref FOR JUSTICE' -Ghandi</h1>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Create your own rules! Upload a jaded referee!</h1>
+        <p>Be fair, a jerk, confused, one-sided, whatevs you like with your own baby rule enforcer.</p>
+       </div>
+    </div>
+    
+    <% if @referee.errors.any? %>
+      <div class="alert alert-danger">
+        <ul>
+          <% @referee.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+   <% end %>
 
-<%= form_for @referee do |f| %>
-  <div class = "form-group" >
-       <%= f.label :name  %>
-       <%= f.text_field :name , class: 'form-control'%>
-  </div>
-  <div class = "form-group" >
-      <%= f.label :rules_url  %>
-      <%= f.text_field :rules_url , class: 'form-control'%>
-  </div>
-  <div class = "form-group" >
-       <%= f.label :players_per_game  %>
-       <%# f.text_field :players_per_game , class: 'form-control' %>
-       <%= f.select :players_per_game, 1..10, {} ,class: 'form-control' %>
-  </div>
+    <div class="jumbotron">
+      <div class="container">
+        <%= form_for @referee , :action => "create", :method => :post do |f| %>
+            <%= render "referee_fields" , f:f %>
 
-   <div class = "form-group" >
-       <%= f.label :upload  %>
-       <%= f.file_field :upload , class: 'form-control' %>
-  </div>
-    <%= f.submit "'Upload a new referee' -Ghandi" %>
-<% end %>
+             <%= f.submit "Create Referee", class: 'btn btn-primary btn-lg' %>
+        <% end %>
+      </div>
+    </div>
